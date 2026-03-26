@@ -31,12 +31,17 @@ public class PossoasController {
         }
         return ResponseEntity.ok(pessoasList);
     }
-    public  ResponseEntity<Pessoas> criar(@RequestBody PessoasResquestDTO pessoa){
+
+    @GetMapping("/criar")
+    public  ResponseEntity<Pessoas> criar
+            (@RequestBody PessoasResquestDTO pessoa){
 
         Pessoas pessoaPesist = new Pessoas();
+
         pessoaPesist.setNome(pessoa.getNome());
         pessoaPesist.setSobenome(pessoa.getSobrenome());
-        pessoasRepository.save(pessoaPesist);
-        return ResponseEntity.status(201).body()
+
+        Pessoas retorno = pessoasRepository.save(pessoaPesist);
+        return ResponseEntity.status(201).body(retorno);
     }
 }
