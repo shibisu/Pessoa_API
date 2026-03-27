@@ -13,7 +13,7 @@ public class Pessoas {
     private  String nome;
 
     @Column
-    private  String sobenome;
+    private  String sobrenome;
 
     public long getId() {
         return id;
@@ -31,11 +31,11 @@ public class Pessoas {
         this.nome = nome;
     }
 
-    public String getSobenome() {
-        return sobenome;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setSobenome(String sobenome) {
-        this.sobenome = sobenome;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 }
